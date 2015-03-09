@@ -1,37 +1,39 @@
 import java.io.*;
+import java.util.Scanner;
 
-    //inicio()
-    arabicoRomano()
-    romanoArabico()
+    arabigoRomano()
+    romanoArabigo()
 
-def arabicoRomano(){    
+def arabigoRomano(){
 
-    def arabico = "348"
-    def numeroArabico = arabico as int
+    Scanner sc=new Scanner(System.in)
 
-    println "Escribe el numero Arabico"
+    println("Escribe Numero Arabigo:")
 
-    if (numeroArabico>=1 && numeroArabico<=3888){
+    def arabigo=sc.nextLine()
+    def numeroArabigo = arabigo as int
+
+    if (numeroArabigo>=1 && numeroArabigo<=3888){
             
             def remplazaNumero = []
-            def numeroEntrada = []           
-            numeroEntrada = arabico.split("")
+            def numeroEntrada = []
+            numeroEntrada = arabigo.split("")
             
-            if(arabico.length()==1){
+            if(arabigo.length()==1){
                 remplazaNumero[0]="0"
                 remplazaNumero[1]="0"
                 remplazaNumero[2]="0"
                 remplazaNumero[3]=numeroEntrada[1]
             }
             
-            if(arabico.length()==2){
+            if(arabigo.length()==2){
                 remplazaNumero[0]="0"
                 remplazaNumero[1]="0"
                 remplazaNumero[2]=numeroEntrada[1]
                 remplazaNumero[3]=numeroEntrada[2]
             }
             
-            if(arabico.length()==3){
+            if(arabigo.length()==3){
                 remplazaNumero[0]="0"
                 remplazaNumero[1]=numeroEntrada[1]
                 remplazaNumero[2]=numeroEntrada[2]
@@ -39,7 +41,7 @@ def arabicoRomano(){
                 println "RemNumero: ${remplazaNumero}" 
             }
             
-            if(arabico.length()==4){
+            if(arabigo.length()==4){
                 remplazaNumero[0]=numeroEntrada[1]
                 remplazaNumero[1]=numeroEntrada[2]
                 remplazaNumero[2]=numeroEntrada[3]
@@ -118,7 +120,7 @@ def arabicoRomano(){
                     unidad = "IX"             
                 }
             
-            println "Numero Arabico ingresado: ${arabico}"   
+            println "Numero Arabigo ingresado: ${arabigo}"
             println "Numero Romano: ${miles}${centenas}${decenas}${unidad}" 
             
             } 
@@ -131,12 +133,14 @@ def arabicoRomano(){
 
 }
 
-def romanoArabico(){
+def romanoArabigo(){
 
-        println "Escribe el numero Romano (I,V,X...):"
-        
+        Scanner sc=new Scanner(System.in)
+
+        println("Escribe el numero Romano (I,V,X...):")
+
         //DATO DE PRUEBA
-        def numeroRomano = "III"
+        def numeroRomano=sc.nextLine()
         
         def simboloRomano = ["I","V","X","L","C","D","M"]
         def numeroEntrada = []           
@@ -200,7 +204,7 @@ def romanoArabico(){
                 
                 remplazaSimbolo=miles+centenas+decenas+unidades;
                 
-                println "Numero Arabico: ${remplazaSimbolo}"              
+                println "Numero Arabigo: ${remplazaSimbolo}"
                 
             }else{
                 println "No puede ser evaluado."
@@ -230,20 +234,4 @@ def romanoArabico(){
                     break;
                 }
 
-    }
-
-    def leerEntrada() {
-            def salida = "";
-       try{
-            // Definimos un flujo de caracteres de entrada: leerEntrada
-            BufferedReader leerEntrada = new BufferedReader(new InputStreamReader(System.in));
-            
-            println "Escribe un numero: "
-            salida = leerEntrada.readLine();
-            println salida
-            
-        } catch( IOException e) {
-            System.err.println("Error: " + e.getMessage());
-        }
-            return salida; // Devuelve el string
     }**/
